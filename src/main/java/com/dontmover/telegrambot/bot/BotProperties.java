@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class BotProperties {
     private static String username = "Testing_bot_bot_bot";
-    private static String token = "5205233596:AAGdJ7r9ZXLMiWfkPTqboX55WoyqCEsz_eA";
+    private static String token = "token";
 
     public String getUsername() {
         return this.username;
