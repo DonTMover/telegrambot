@@ -1,12 +1,11 @@
 package com.dontmover.telegrambot.bot;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
-import com.dontmover.telegrambot.bot.BotProperties.*;
+import org.springframework.beans.factory.annotation.Value;
 
 @Component
 public class bot extends TelegramLongPollingBot {
@@ -14,10 +13,15 @@ public class bot extends TelegramLongPollingBot {
 
 
     }
-    BotProperties botProperties = new BotProperties();
-    private String username = botProperties.getUsername();
+    @Value("${bot.username}")
+    private String username;
 
-    private String token = botProperties.getToken();
+    @Value("${bot.token}")
+    private String token;
+//    BotProperties botProperties = new BotProperties();
+//    private String username = botProperties.getUsername();
+//
+//    private String token = botProperties.getToken();
 
     @Override
     public String getBotUsername() {
